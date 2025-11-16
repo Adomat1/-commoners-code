@@ -1,0 +1,27 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .line { stroke: #ffffff; stroke-width: 8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { stroke-width: 5; }
+    </style>
+  </defs>
+
+  <!-- Crown -->
+  <path class="line" d="M150 220 L200 150 L260 220 L300 150 L340 220 L400 150 L450 220" />
+  <line class="line thin" x1="150" y1="220" x2="450" y2="220" />
+
+  <!-- Serpent Body (forming a symmetrical S-shape) -->
+  <path class="line" d="M300 230
+           C240 260, 240 340, 300 370
+           C360 400, 360 480, 300 510
+           C240 480, 240 400, 300 370
+           C360 340, 360 260, 300 230" />
+
+  <!-- Serpent Head -->
+  <path class="line" d="M280 205 C300 190, 320 190, 340 205" />
+  <circle cx="290" cy="205" r="6" fill="#ffffff" />
+  <circle cx="310" cy="205" r="6" fill="#ffffff" />
+
+  <!-- Serpent Tail Tip -->
+  <path class="line thin" d="M300 510 L285 540 L315 540 Z" />
+</svg>

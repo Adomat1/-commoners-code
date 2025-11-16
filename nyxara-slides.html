@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GET AHEAD OF THE GAME — 2030 Guide (Nyxara Edition) | Slides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === ROOT & RESET === */
+    :root {
+      --black: #000000;
+      --charcoal: #1a1a1a;
+      --obsidian: #0d0d0d;
+      --pearl: #f5f5f5;
+      --pearl-muted: #cccccc;
+      --accent-gold: #d4af37;
+      --glow: rgba(212, 175, 55, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--black);
+      color: var(--pearl);
+      font-family: 'Inter', sans-serif;
+      font-size: 18pt;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* === SLIDE STRUCTURE === */
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto 40px;
+      background: linear-gradient(135deg, var(--black) 0%, var(--obsidian) 50%, var(--charcoal) 100%);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      padding: 80px 100px 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+    }
+
+    /* === WATERMARK === */
+    .watermark {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      opacity: 0.15;
+      pointer-events: none;
+      filter: drop-shadow(0 0 20px var(--glow));
+      z-index: 1;
+    }
+
+    .watermark img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Cover slide gets larger centered watermark */
+    .slide.cover .watermark {
+      width: 400px;
+      height: 400px;
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      transform: translate(-50%, -50%);
+      opacity: 0.12;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* === TYPOGRAPHY === */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 96pt;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--pearl);
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 64pt;
+      line-height: 1.1;
+      color: var(--pearl);
+      margin-bottom: 60px;
+      text-align: center;
+      text-shadow: 0 0 30px var(--glow);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 48pt;
+      color: var(--accent-gold);
+      margin-bottom: 40px;
+    }
+
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 32pt;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 24pt;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 32pt;
+      font-weight: 300;
+      color: var(--pearl-muted);
+      letter-spacing: 0.15em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* === COVER SLIDE === */
+    .cover .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .cover h1 {
+      font-size: 120pt;
+      margin-bottom: 30px;
+      text-shadow: 0 0 60px var(--glow);
+    }
+
+    .cover .edition {
+      font-family: 'Inter', sans-serif;
+      font-size: 28pt;
+      font-weight: 600;
+      color: var(--accent-gold);
+      letter-spacing: 0.2em;
+      margin-top: 60px;
+      padding: 20px 50px;
+      border: 2px solid var(--accent-gold);
+      background: rgba(212, 175, 55, 0.05);
+      box-shadow: 0 0 30px var(--glow);
+    }
+
+    /* === DIVIDERS === */
+    .divider {
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+      margin: 60px auto;
+      box-shadow: 0 0 20px var(--glow);
+    }
+
+    /* === LISTS === */
+    ul, ol {
+      margin-left: 60px;
+      margin-bottom: 30px;
+      font-size: 24pt;
+    }
+
+    li {
+      margin-bottom: 20px;
+      padding-left: 10px;
+    }
+
+    ul li::marker {
+      color: var(--accent-gold);
+      font-size: 28pt;
+    }
+
+    /* === SPECIAL ELEMENTS === */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin: 40px 0;
+    }
+
+    .columns-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+      margin: 40px 0;
+    }
+
+    .box {
+      padding: 40px;
+      background: rgba(26, 26, 26, 0.6);
+      border: 2px solid var(--accent-gold);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .box h4 {
+      font-size: 28pt;
+      margin: 0 0 20px 0;
+    }
+
+    .box p {
+      font-size: 20pt;
+      margin: 0;
+    }
+
+    .quote {
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 40px;
+      margin: 60px 0;
+      font-style: italic;
+      font-size: 32pt;
+      color: var(--pearl-muted);
+      text-shadow: 0 0 20px var(--glow);
+    }
+
+    .highlight {
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* === SLIDE NUMBER === */
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 100px;
+      font-size: 18pt;
+      color: var(--pearl-muted);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.1em;
+      z-index: 20;
+    }
+
+    /* === PRINT OPTIMIZATION === */
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .slide {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* === LAYOUT HELPERS === */
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-large {
+      margin-top: 80px;
+    }
+
+    strong {
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide cover">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h1>Get Ahead<br>of the Game</h1>
+      <p class="subtitle">2030 GUIDE</p>
+      <div class="divider"></div>
+      <p class="edition">NYXARA EDITION</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: INTRODUCTION -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h2>The Future Belongs to the Prepared</h2>
+      <p>The world is accelerating. By 2030, the landscape of work, finance, technology, and human connection will look radically different.</p>
+      <div class="divider"></div>
+      <p><strong>This is your field manual.</strong> No fluff. No platitudes. Only clear-eyed analysis and actionable strategies for navigating uncertainty with discipline.</p>
+    </div>
+    <div class="slide-number">01</div>
+  </div>
+
+  <!-- SLIDE 3: WHO THIS IS FOR -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Who This Guide Is For</h3>
+      <ul>
+        <li>Those who recognize old playbooks no longer work</li>
+        <li>Those who value autonomy, resilience, strategic thinking</li>
+        <li>Those who understand technology is a tool, not a master</li>
+        <li>Those willing to do the work required to stay ahead</li>
+      </ul>
+    </div>
+    <div class="slide-number">02</div>
+  </div>
+
+  <!-- SLIDE 4: AI LANDSCAPE -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>I. Artificial Intelligence</h3>
+      <p>By 2030, AI will be <strong>infrastructure</strong>, not novelty.</p>
+      <div class="columns-3">
+        <div class="box">
+          <h4>Learn to Prompt</h4>
+          <p>Master structured communication with AI</p>
+        </div>
+        <div class="box">
+          <h4>Guard Data</h4>
+          <p>Control what you share; understand ownership</p>
+        </div>
+        <div class="box">
+          <h4>Stay Human</h4>
+          <p>Cultivate judgment, creativity, ethics</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">03</div>
+  </div>
+
+  <!-- SLIDE 5: DECENTRALIZATION -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Decentralization & Web3</h3>
+      <p>Trustless systems, peer-to-peer networks, transparent ledgers will reshape finance, governance, and identity.</p>
+      <h4>Critical Skills</h4>
+      <ul>
+        <li>Self-custody of digital assets</li>
+        <li>Smart contract literacy</li>
+        <li>Digital identity control</li>
+        <li>Regulatory compliance awareness</li>
+      </ul>
+    </div>
+    <div class="slide-number">04</div>
+  </div>
+
+  <!-- SLIDE 6: ECONOMIC SHIFT -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>II. The Economic Shift</h3>
+      <div class="quote">
+        "The career ladder is dead. The new model is portfolio-based."
+      </div>
+      <div class="columns">
+        <div>
+          <h4>Old Model</h4>
+          <ul>
+            <li>Linear progression</li>
+            <li>Single employer</li>
+            <li>Pension retirement</li>
+          </ul>
+        </div>
+        <div>
+          <h4>New Model</h4>
+          <ul>
+            <li>Multiple income streams</li>
+            <li>Project-based work</li>
+            <li>Continuous reinvention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">05</div>
+  </div>
+
+  <!-- SLIDE 7: MICRO-CREDENTIALS -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>The Rise of Micro-Credentials</h3>
+      <p>Traditional degrees are losing signaling power. Employers value <strong>demonstrated competence</strong> over pedigree.</p>
+      <h4>Action Steps</h4>
+      <ul>
+        <li>Build in public; document learning</li>
+        <li>Pursue industry-recognized certifications</li>
+        <li>Create portfolio pieces proving capability</li>
+        <li>Engage with communities of practice</li>
+      </ul>
+    </div>
+    <div class="slide-number">06</div>
+  </div>
+
+  <!-- SLIDE 8: FINANCIAL RESILIENCE -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Financial Resilience</h3>
+      <div class="columns-3">
+        <div class="box">
+          <h4>Diversify Assets</h4>
+          <p>Cash, equities, real assets, digital currencies</p>
+        </div>
+        <div class="box">
+          <h4>Reduce Debt</h4>
+          <p>Minimize leverage exposure</p>
+        </div>
+        <div class="box">
+          <h4>Build Buffers</h4>
+          <p>6–12 months emergency fund</p>
+        </div>
+      </div>
+      <p class="text-center mt-large"><strong>Volatility is the new normal. Prepare accordingly.</strong></p>
+    </div>
+    <div class="slide-number">07</div>
+  </div>
+
+  <!-- SLIDE 9: TECHNICAL LITERACY -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>III. Technical Literacy</h3>
+      <p>You don't need to be a programmer, but you need to understand how systems work.</p>
+      <h4>Core Competencies</h4>
+      <ul>
+        <li>Code basics: logic, loops, functions</li>
+        <li>Data analysis: interpret charts, spot patterns</li>
+        <li>Cybersecurity: strong passwords, 2FA, phishing awareness</li>
+        <li>Digital tools: productivity, collaboration, automation</li>
+      </ul>
+    </div>
+    <div class="slide-number">08</div>
+  </div>
+
+  <!-- SLIDE 10: COMMUNICATION -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Communication Precision</h3>
+      <div class="quote">
+        "In a world drowning in noise, clarity is power."
+      </div>
+      <h4>Development Path</h4>
+      <ul>
+        <li>Write daily; brevity improves with practice</li>
+        <li>Study great communicators</li>
+        <li>Seek feedback; blind spots require external perspective</li>
+        <li>Practice public speaking</li>
+      </ul>
+    </div>
+    <div class="slide-number">09</div>
+  </div>
+
+  <!-- SLIDE 11: CRITICAL THINKING -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Critical Thinking</h3>
+      <p>Misinformation, deepfakes, algorithmic manipulation—the information environment is hostile.</p>
+      <h4>Evaluation Framework</h4>
+      <ul>
+        <li><strong>Source:</strong> Who benefits? Who funded it?</li>
+        <li><strong>Evidence:</strong> Is it verifiable? Citations provided?</li>
+        <li><strong>Bias:</strong> What's emphasized? What's omitted?</li>
+        <li><strong>Emotion:</strong> Designed to provoke outrage or fear?</li>
+      </ul>
+    </div>
+    <div class="slide-number">10</div>
+  </div>
+
+  <!-- SLIDE 12: HEALTH FOUNDATIONS -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>IV. Health Foundations</h3>
+      <div class="columns-3">
+        <div class="box">
+          <h4>Sleep</h4>
+          <p>7–9 hours, consistent schedule</p>
+        </div>
+        <div class="box">
+          <h4>Movement</h4>
+          <p>Daily activity, strength training</p>
+        </div>
+        <div class="box">
+          <h4>Nutrition</h4>
+          <p>Whole foods, adequate protein</p>
+        </div>
+      </div>
+      <p class="text-center mt-large">Ignore the fads. <strong>Focus on fundamentals.</strong></p>
+    </div>
+    <div class="slide-number">11</div>
+  </div>
+
+  <!-- SLIDE 13: MENTAL RESILIENCE -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Mental Resilience</h3>
+      <p>The pace of change will test psychological endurance. Build defenses.</p>
+      <div class="columns">
+        <div>
+          <h4>Practices</h4>
+          <ul>
+            <li>Daily mindfulness (5+ min)</li>
+            <li>Digital boundaries</li>
+            <li>Genuine community</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Environment</h4>
+          <ul>
+            <li>Workspace ergonomics</li>
+            <li>Digital hygiene</li>
+            <li>Declutter ruthlessly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">12</div>
+  </div>
+
+  <!-- SLIDE 14: PRIVACY -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>V. Privacy as Power</h3>
+      <p>Your digital footprint is permanent. <strong>Control it.</strong></p>
+      <h4>Protective Measures</h4>
+      <ul>
+        <li>Encrypted communication (Signal, ProtonMail)</li>
+        <li>VPNs for browsing; Tor for sensitive activities</li>
+        <li>Minimize social media presence</li>
+        <li>Review app permissions regularly</li>
+        <li>Use aliases for non-critical accounts</li>
+      </ul>
+    </div>
+    <div class="slide-number">13</div>
+  </div>
+
+  <!-- SLIDE 15: COMMUNITY -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>Community & Mutual Aid</h3>
+      <div class="quote">
+        "When systems fail, communities survive."
+      </div>
+      <h4>How to Start</h4>
+      <ul>
+        <li>Identify local networks: neighbors, interest groups, guilds</li>
+        <li>Contribute skills: teach, repair, organize</li>
+        <li>Share resources: tools, knowledge, connections</li>
+        <li>Establish protocols: communication plans, emergency contacts</li>
+      </ul>
+    </div>
+    <div class="slide-number">14</div>
+  </div>
+
+  <!-- SLIDE 16: 90-DAY PLAN -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h3>90-Day Action Plan</h3>
+      <div class="columns-3">
+        <div class="box">
+          <h4>Month 1</h4>
+          <p><strong>Foundation:</strong> Audit finances, skills, health, network. Define objectives.</p>
+        </div>
+        <div class="box">
+          <h4>Month 2</h4>
+          <p><strong>Implementation:</strong> Build skills, secure digital infrastructure, grow network.</p>
+        </div>
+        <div class="box">
+          <h4>Month 3</h4>
+          <p><strong>Optimization:</strong> Establish health routines, review progress, iterate.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">15</div>
+  </div>
+
+  <!-- SLIDE 17: FINAL -->
+  <div class="slide">
+    <div class="watermark">
+      <img src="nyxara-watermark.svg" alt="Nyxara">
+    </div>
+    <div class="content">
+      <h2>Fortune Favors the Prepared</h2>
+      <div class="divider"></div>
+      <p class="text-center" style="font-size: 28pt; margin-top: 60px;">
+        Discipline beats motivation.<br>
+        Systems beat goals.<br>
+        Preparation beats panic.
+      </p>
+      <p class="text-center mt-large" style="font-family: 'Playfair Display', serif; font-size: 36pt; color: var(--accent-gold);">
+        — NYXARA —
+      </p>
+    </div>
+    <div class="slide-number">16</div>
+  </div>
+
+</body>
+</html>
