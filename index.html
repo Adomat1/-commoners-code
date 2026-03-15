@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kyle King — Commoner's Code</title>
+<meta name="description" content="Kyle King — modern field manuals, The Commoner's Code & The Commoner's Ledger.">
+<style>
+  :root{
+    --bg:#F8F8F7; --fg:#2A2A2A; --muted:#6E6E6E;
+    --sage:#A8B79A; --rust:#B07B56; --mist:#A7BFCF; --sand:#E4D9C5; --line:#D6D3CC;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:980px;margin:auto;padding:56px 24px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:32px}
+  .brand{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:.08em}
+  .title{font-weight:800;font-size:22px}
+  .motto{font-size:14px;color:var(--muted)}
+  nav a{color:var(--fg);text-decoration:none;margin-left:16px;border-bottom:1px solid transparent}
+  nav a:hover{border-color:var(--rust)}
+  .hero{padding:40px 28px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(0deg,#ffffff00,#ffffff22);box-shadow:0 1px 0 #00000005}
+  h1{font:800 32px/1.2 Manrope,Inter,sans-serif;letter-spacing:.04em;margin:0 0 8px}
+  .sub{color:var(--muted);margin:0 0 18px}
+  .pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--sand);font-size:12px;margin-right:8px}
+  section{margin:48px 0}
+  h2{font:800 18px/1.2 Manrope,Inter,sans-serif;letter-spacing:.06em;margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:18px 16px;background:#fff;box-shadow:0 1px 0 #00000008}
+  .card h3{font:700 16px Manrope,Inter,sans-serif;margin:0 0 8px}
+  .tag{font-size:12px;color:#fff;background:var(--fg);padding:2px 8px;border-radius:999px;margin-right:6px}
+  .tag.sage{background:var(--sage)} .tag.rust{background:var(--rust)} .tag.mist{background:var(--mist)}
+  .meta{font-size:13px;color:var(--muted);margin-top:8px}
+  .key{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .key span{font-size:12px;border:1px solid var(--line);padding:4px 8px;border-radius:999px}
+  footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;border:1px solid var(--rust);color:var(--fg);text-decoration:none}
+  .cta:hover{background:#fff5ef}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#111111;--fg:#F2F2F2;--muted:#B9B9B9;--line:#333333}
+    .hero{background:linear-gradient(0deg,#00000000,#ffffff05)}
+    .card{background:#151515}
+    .cta:hover{background:#201a17}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="brand title">THE COMMONER'S CODE</div>
+        <div class="motto">Keep it current. Keep it human.</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1>Kyle King — Creative Systems</h1>
+      <p class="sub">Modern field manuals, resilient design systems, and AI-assisted publishing.</p>
+      <span class="pill">Independent</span>
+      <span class="pill">London · 2025</span>
+      <a class="cta" href="#contact">Contact & Verification</a>
+    </div>
+
+    <section id="about">
+      <h2>ABOUT</h2>
+      <p>I build practical, elegant tools for ordinary resilience: clear language, clean layouts, and systems that stay useful under pressure. My work spans manuals, planners, and code that turns philosophy into working objects.</p>
+      <div class="key">
+        <span>Design systems</span><span>Publication pipelines</span><span>Claude / GPT tooling</span><span>Print + PDF</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>PROJECTS</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>The Commoner's Ledger <span class="tag sage">Light & Dark</span></h3>
+          <p>A 42-page, colour-coded survival planner — fifteen sections (Identity, Health, Money, Skills, Legacy). Built for quiet resilience.</p>
+          <div class="meta">Appendix to <em>The Commoner's Code — Field Manual I</em>.</div>
+        </div>
+        <div class="card">
+          <h3>The Commoner's Code <span class="tag rust">Field Manual I</span></h3>
+          <p>Chapters 1–6 + Creed, Afterword, and practical appendices. A modern, austere voice with usable checklists and recipes.</p>
+          <div class="meta">Tone: British English · modern · no ornament.</div>
+        </div>
+        <div class="card">
+          <h3>Tooling <span class="tag mist">Claude Code</span></h3>
+          <p>Scripts and prompts to generate, version, and package PDFs — setup, cleanup, release, and version bump utilities.</p>
+          <div class="meta">macOS · Bash · npm global CLI.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>CONTACT & VERIFICATION</h2>
+      <p>Email: <a href="mailto:hello@your-domain.tld">hello@your-domain.tld</a><br>
+         Site: <a href="https://your-domain.tld">https://your-domain.tld</a></p>
+      <p>Purpose: AI-assisted editorial and code generation for publishing tools and field manuals.</p>
+      <p class="meta">This page exists to verify a legitimate developer for Anthropic Console usage and rate-limit increases.</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Kyle King · The Commoner's Code — Field Manual Series · Built with clean HTML/CSS.
+    </footer>
+  </div>
+</body>
+</html>
