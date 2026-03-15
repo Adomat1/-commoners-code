@@ -14,8 +14,25 @@
     "CSS": {
       "tab_size": 2,
       "format_on_save": "on"
+    },
+    "Markdown": {
+      "tab_size": 2
     }
   },
   "tab_size": 2,
-  "format_on_save": "on"
+  "format_on_save": "on",
+  "tasks": [
+    {
+      "label": "Claude Code: Interactive",
+      "command": "claude",
+      "args": [],
+      "use_new_terminal": true
+    },
+    {
+      "label": "Claude Code: Run Prompt",
+      "command": "claude",
+      "args": ["-p", "$ZED_SELECTED_TEXT"],
+      "use_new_terminal": true
+    }
+  ]
 }

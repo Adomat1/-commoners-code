@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit",
+      "Write",
+      "Bash(git *)",
+      "Bash(npm *)"
+    ],
+    "deny": []
+  },
+  "model": "claude-sonnet-4-6"
+}
