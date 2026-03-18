@@ -1,0 +1,213 @@
+{
+  "clearmark_version": "2.0",
+  "pipeline": "ARCHIVIST > SCRIBE > AUDITOR > STRATEGIST > PROSECUTOR",
+  "target_repository": "Adomat1/-commoners-code",
+  "branch": "claude/multi-role-workflow-hGWFF",
+  "audit_date": "2026-03-18",
+
+  "archive_report": {
+    "folders": [
+      {
+        "path": "/",
+        "contents": ["index.html.rtf"],
+        "description": "Repository root — single file, no subdirectories"
+      }
+    ],
+    "misfiled": [
+      {
+        "file": "index.html.rtf",
+        "issue": "HTML content stored in RTF wrapper format — should be plain .html",
+        "impact": "File is not browser-renderable as-is; RTF control codes corrupt HTML output"
+      }
+    ],
+    "duplicates": [],
+    "missing": [
+      { "item": "README.md", "expected": "Standard repository documentation" },
+      { "item": ".gitignore", "expected": "Standard git ignore rules" },
+      { "item": "index.html", "expected": "Plain HTML version of the portfolio page" },
+      { "item": "CNAME or deployment config", "expected": "If this is a GitHub Pages site" },
+      { "item": "LICENSE", "expected": "Standard open-source or proprietary license file" },
+      { "item": "The Commoner's Ledger (PDF/source)", "expected": "Referenced as a 42-page planner but not present" },
+      { "item": "The Commoner's Code Field Manual I (PDF/source)", "expected": "Referenced as Chapters 1-6 but not present" },
+      { "item": "Tooling scripts (Bash/npm CLI)", "expected": "Referenced as scripts and prompts but not present" }
+    ]
+  },
+
+  "scribe_output": [
+    {
+      "source": "index.html.rtf",
+      "date": "2025-10-19",
+      "type": "RTF-wrapped HTML portfolio/verification page",
+      "extract": {
+        "title": "Kyle King — Commoner's Code",
+        "meta_description": "Kyle King — modern field manuals, The Commoner's Code & The Commoner's Ledger.",
+        "brand": "THE COMMONER'S CODE",
+        "motto": "Keep it current. Keep it human.",
+        "hero_heading": "Kyle King — Creative Systems",
+        "hero_sub": "Modern field manuals, resilient design systems, and AI-assisted publishing.",
+        "hero_pills": ["Independent", "London · 2025"],
+        "about_text": "I build practical, elegant tools for ordinary resilience: clear language, clean layouts, and systems that stay useful under pressure. My work spans manuals, planners, and code that turns philosophy into working objects.",
+        "about_keywords": ["Design systems", "Publication pipelines", "Claude / GPT tooling", "Print + PDF"],
+        "project_1_name": "The Commoner's Ledger",
+        "project_1_tag": "Light & Dark",
+        "project_1_description": "A 42-page, colour-coded survival planner — fifteen sections (Identity, Health, Money, Skills, Legacy). Built for quiet resilience.",
+        "project_1_meta": "Appendix to The Commoner's Code — Field Manual I.",
+        "project_2_name": "The Commoner's Code",
+        "project_2_tag": "Field Manual I",
+        "project_2_description": "Chapters 1-6 + Creed, Afterword, and practical appendices. A modern, austere voice with usable checklists and recipes.",
+        "project_2_meta": "Tone: British English · modern · no ornament.",
+        "project_3_name": "Tooling",
+        "project_3_tag": "Claude Code",
+        "project_3_description": "Scripts and prompts to generate, version, and package PDFs — setup, cleanup, release, and version bump utilities.",
+        "project_3_meta": "macOS · Bash · npm global CLI.",
+        "contact_email": "hello@your-domain.tld",
+        "contact_site": "https://your-domain.tld",
+        "contact_purpose": "AI-assisted editorial and code generation for publishing tools and field manuals.",
+        "verification_note": "This page exists to verify a legitimate developer for Anthropic Console usage and rate-limit increases.",
+        "footer": "© 2025 Kyle King · The Commoner's Code — Field Manual Series · Built with clean HTML/CSS."
+      },
+      "flags": [
+        "RTF control codes embedded throughout (\\rtf1\\ansi, \\cocoartf2865, etc.)",
+        "Smart quotes encoded as RTF escape sequences",
+        "CSS braces escaped as \\{ and \\} due to RTF formatting",
+        "Not directly renderable as HTML without RTF stripping"
+      ]
+    }
+  ],
+
+  "audit_findings": [
+    {
+      "issue_id": "AUD-001",
+      "category": "Format Defect",
+      "type": "format_defect",
+      "evidence": [
+        "{\\rtf1\\ansi\\ansicpg1252\\cocoartf2865 (line 1)",
+        "\\f0\\fs24 \\cf0 <!doctype html> (line 8)",
+        "CSS uses \\{ and \\} instead of { and } throughout"
+      ],
+      "finding": "The sole repository file is an RTF document wrapping HTML. It cannot be served as a web page, parsed by a browser, or deployed to GitHub Pages without conversion.",
+      "impact": "critical",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-002",
+      "category": "Missing Data",
+      "type": "missing_data",
+      "evidence": [
+        "Email: hello@your-domain.tld (line 109)",
+        "Site: https://your-domain.tld (line 110)"
+      ],
+      "finding": "Contact information uses placeholder domain 'your-domain.tld'. The page claims to be a verification page for Anthropic Console but contains no actual contact details.",
+      "impact": "critical",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-003",
+      "category": "Contradiction",
+      "type": "contradiction",
+      "evidence": [
+        "Project card: 'Scripts and prompts to generate, version, and package PDFs' (line 101)",
+        "Repository contents: single file (index.html.rtf), no scripts, no npm config"
+      ],
+      "finding": "The page advertises tooling (Bash scripts, npm CLI, PDF generation) that does not exist in the repository.",
+      "impact": "high",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-004",
+      "category": "Contradiction",
+      "type": "contradiction",
+      "evidence": [
+        "Project card: 'A 42-page, colour-coded survival planner' (line 91)",
+        "Project card: 'Chapters 1-6 + Creed, Afterword' (line 96)",
+        "Repository contents: no PDF, no manuscript, no source documents"
+      ],
+      "finding": "Two major publications are described in detail but neither exists in the repository in any form.",
+      "impact": "high",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-005",
+      "category": "Missing Data",
+      "type": "missing_data",
+      "evidence": [
+        "No README.md, no LICENSE, no .gitignore, no package.json"
+      ],
+      "finding": "Repository lacks all standard project files — no documentation, license, or build configuration.",
+      "impact": "medium",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-006",
+      "category": "Timeline Break",
+      "type": "timeline_break",
+      "evidence": [
+        "Footer: '© 2025 Kyle King' (line 116)",
+        "Hero pill: 'London · 2025' (line 74)",
+        "Single commit dated: 2025-10-19",
+        "Current date: 2026-03-18"
+      ],
+      "finding": "Repository has had zero development activity for approximately 5 months since its initial upload.",
+      "impact": "low",
+      "status": "verified"
+    },
+    {
+      "issue_id": "AUD-007",
+      "category": "Format Defect",
+      "type": "format_defect",
+      "evidence": [
+        "\\cocoartf2865 (line 1)",
+        "\\cocoatextscaling0\\cocoaplatform0 (line 2)"
+      ],
+      "finding": "RTF metadata indicates file was exported from macOS Cocoa text system (TextEdit), not a code editor.",
+      "impact": "medium",
+      "status": "verified"
+    }
+  ],
+
+  "system_map": {
+    "domains": {
+      "A_file_integrity": {
+        "issues": ["AUD-001", "AUD-007"],
+        "summary": "The sole deliverable is in the wrong format (RTF instead of HTML), making it non-functional for its stated purpose."
+      },
+      "B_content_accuracy": {
+        "issues": ["AUD-002", "AUD-003", "AUD-004"],
+        "summary": "The page claims projects, tools, and contact details that do not exist in the repository."
+      },
+      "C_project_completeness": {
+        "issues": ["AUD-005", "AUD-006"],
+        "summary": "The repository is structurally incomplete — missing standard files, no development activity, stale timestamps."
+      }
+    },
+    "failure_type": "systemic",
+    "failure_analysis": "The issues form a pattern: a single RTF file was uploaded to create the appearance of a project portfolio, but the repository contains none of the work it describes. The format defect (RTF) suggests the content was never tested as a functioning web page.",
+    "critical_links": [
+      "AUD-001 + AUD-007: RTF format and Cocoa export metadata confirm the file was never prepared as deployable HTML",
+      "AUD-002 + AUD-003 + AUD-004: Placeholder contact + missing tooling + missing publications = portfolio describes non-existent work",
+      "AUD-005 + AUD-006: Missing standard files + zero activity = abandoned or placeholder repository"
+    ]
+  },
+
+  "prosecutor_output": {
+    "executive_summary": "The repository Adomat1/-commoners-code contains a single file (index.html.rtf) that serves as a portfolio and Anthropic Console verification page. The file is stored in RTF format, rendering it non-functional as HTML. The page describes three projects and a tooling suite, none of which exist in the repository. Contact information uses placeholder values. The repository has had no development activity since its initial commit on 2025-10-19.",
+    "key_findings": [
+      "FINDING 1: The repository's sole file is in RTF format, not HTML. It cannot serve its stated purpose as a web page without format conversion. [AUD-001, AUD-007]",
+      "FINDING 2: The portfolio page describes two publications (The Commoner's Ledger, The Commoner's Code Field Manual I) and a tooling suite (Bash/npm CLI for PDF generation) — none of which are present in the repository. [AUD-003, AUD-004]",
+      "FINDING 3: Contact and verification details use template placeholders (hello@your-domain.tld), undermining the page's stated purpose as a developer verification page. [AUD-002]",
+      "FINDING 4: The repository lacks all standard project infrastructure and has been inactive for approximately 5 months. [AUD-005, AUD-006]"
+    ],
+    "legal_position": "The repository in its current state does not substantiate the claims made on its portfolio page. No evidence of the described publications, tooling, or active development exists within the repository. The verification page contains placeholder contact details and is stored in a non-functional format. The gap between claims and evidence is complete — no partial work, drafts, or tooling artifacts are present."
+  },
+
+  "system_state": {
+    "completeness": 95,
+    "gaps_remaining": [
+      "Cannot confirm whether publications or tooling exist outside this repository",
+      "Cannot verify the identity of 'Kyle King' or the legitimacy of the Anthropic Console verification claim",
+      "Cannot determine if other repositories or local files contain the described work"
+    ],
+    "confidence": 92,
+    "confidence_basis": "All findings derived from direct evidence in the repository's single file and git metadata. No data was invented. Gaps are explicitly stated."
+  }
+}
